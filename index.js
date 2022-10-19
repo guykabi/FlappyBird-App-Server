@@ -18,7 +18,7 @@ require('./configs/database')
 
 
 app.use('/api/leadboard',allUsersLeadboardRouter)
-/*app.use(errorHnadler) //Middleware handling error function*/
+app.use(errorHnadler) //Middleware handling error function
 
 app.listen(port,()=>{
     console.log('App is listenning on port' + " " + port)

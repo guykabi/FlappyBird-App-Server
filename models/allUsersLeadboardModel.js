@@ -4,8 +4,8 @@ const {Schema} =mongoose
 
 //All users collection schema
 const allUsersLeadboardSchema = new Schema({
-    name:{type:String,required:true},
-    points:{type:Number,required:true}
+    Username:{type:String,required:true},
+    Score:{type:Number,required:true}
 },
     {timestamps:true}
 ) 
