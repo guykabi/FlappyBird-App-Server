@@ -2,16 +2,6 @@ const router = require('express').Router()
 const leadboardModel = require('../models/allUsersLeadboardModel')
 
 
-//Get all user and than filter top 10
-/*router.get('/',async(req,resp)=>{
-//From the collection of top 10 users 
-})*/ 
-
-//Updaing the top 10 collection function 
-//and remove the user that has the lowest score!
-
-
-
 router.get('/:id',async(req,resp,next)=>{
     //Get the user best score? like on cases user is not on top 10,
     // just to show him on screen?
@@ -39,11 +29,12 @@ router.post('/',async(req,resp)=>{
     }
 }) 
 
+//Checks if user exists and by that if username is taken already
 router.post('/user',async(req,resp,next)=>{
-    const {Username,Score} = req.body
+    const {Username} = req.body
     try{
-           let data = await leadboardModel.find({Username,Score})
-           if(data.length < 1) return next(new Error('User not found')) //If no user found
+           let data = await leadboardModel.find({Username})
+           if(data.length < 1) return next(new Error('User not found - username is available')) //If no user found
            if(data) return resp.status(200).json({message:'User found!',Details:data})
     }catch(err)
     {
