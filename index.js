@@ -3,7 +3,7 @@ const cors = require('cors')
 const BodyParser = require("body-parser");
 require('dotenv').config()
 const allUsersLeadboardRouter = require('./routes/allUsersLeadboardRouter')
-const topTenLeadboardRouter = require('./routes/topTenLeadboard')
+//const topTenLeadboardRouter = require('./routes/topTenLeadboard')
 const errorHnadler = require('./middleware/errorhandler')
 
 const app = express() 
@@ -18,7 +18,7 @@ require('./configs/database')
 
 
 app.use('/leadboard',allUsersLeadboardRouter)
-app.use('/toptenleadboard',topTenLeadboardRouter)
+//app.use('/toptenleadboard',topTenLeadboardRouter)
 app.use(errorHnadler) //Middleware handling error function
 
 app.listen(port,()=>{

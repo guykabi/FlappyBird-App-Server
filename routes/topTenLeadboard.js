@@ -3,7 +3,7 @@ const topTenLeadborad = require('../models/topTenLeadboardModel')
 
 
 
-router.get('/', async (req,resp,next)=>{ //Get all top 10 users
+/*router.get('/', async (req,resp,next)=>{ //Get all top 10 users
     try{
         let data = await topTenLeadborad.find().sort({Score:-1})//Returns users by descending order of scores
         if(!data)  return next(new Error('Something went wrong'))
@@ -12,10 +12,10 @@ router.get('/', async (req,resp,next)=>{ //Get all top 10 users
     {
          next(err)
     }
-})
+})*/
 
 
-router.post('/',async (req,resp,next)=>{ 
+/*router.post('/',async (req,resp,next)=>{ 
 
     //Checks if the fields name are correct and prevents an unnecessary delete
     if(!req.body.Username || !req.body.Score) return next(new Error('One or more wrong field name'))
@@ -55,7 +55,7 @@ router.post('/',async (req,resp,next)=>{
     {
         next(err)
     }
-}) 
+}) */
 
 
 module.exports = router
