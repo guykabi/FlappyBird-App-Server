@@ -98,7 +98,7 @@ router.patch('/:id',async(req,resp,next)=>{
 router.delete('/:id',async(req,resp)=>{
     try{
       let data = await leadboardModel.findByIdAndDelete({_id:req.params.id})
-      resp.status(200).json('User deleted')
+      resp.status(200).json('User deleted!')
     }catch(err){
         resp.status(500).json('Error' + err)
     }
